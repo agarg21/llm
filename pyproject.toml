@@ -47,6 +47,7 @@ dev = [
     "build",
     "click>=8.2.0",
     "pytest",
+    "pytest-xdist",
     "numpy",
     "httpx2-pytest>=2",
     "pytest-asyncio",
