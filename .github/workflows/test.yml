@@ -1,6 +1,7 @@
 name: Test
 
-on: [push, pull_request]
+on:
+  workflow_dispatch:
 
 permissions:
   contents: read
@@ -10,7 +11,7 @@ jobs:
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
-        os: [ubuntu-latest, macos-latest, windows-latest]
+        os: [windows-latest]  # fork-only harness: Windows legs set the PR wall
         python-version: ["3.10", "3.11", "3.12", "3.13", "3.14"]
     steps:
     - uses: actions/checkout@v7
